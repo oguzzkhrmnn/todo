@@ -4,8 +4,8 @@ import React from 'react';
 export default function Todos({ToDoItems}){
     const renderTodos =() =>{
 
-        const todos= ToDoItems.map((item) => {
-            console.log(item);
+        const todos= ToDoItems.map((item,index) => {
+            console.logt(ToDoItems[ToDoItems.length-1]);
             return <li>{item}</li>;
 
         });
