@@ -6,7 +6,7 @@ export default function Todos({ToDoItems}){
 
         const todos= ToDoItems.map((item,index) => {
             console.logt(ToDoItems[ToDoItems.length-1]);
-            return <li>{item}</li>;
+            return <li>key={item}{index}</li>;
 
         });
         let arrayy=["oguz","kahraman"];
