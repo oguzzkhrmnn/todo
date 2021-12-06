@@ -10,7 +10,7 @@ export default function Todos({ToDoItems}){
 
         });
         let arrayy=["oguz","kahraman"];
-        localStorage.setItem("oguz",todos);
+        localStorage.setItem("oguz",arrayy);
         const oguz=localStorage.getItem("oguz");
         console.log(oguz);
     return(
