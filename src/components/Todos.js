@@ -1,18 +1,20 @@
 import React from 'react';
 
 
-export default function Todos({ToDoItemFlag,ToDoItem})
-{
-    const renderTodos =() =>
-    {
-return
+export default function Todos({ToDoItems}){
+    const renderTodos =() =>{
+        
+        const todos= ToDoItems.map((item) => {
+            console.log(item);
+            return <li>{item}</li>;
 
-<>{ToDoItem}</>
-     };
+        });
     return(
-       
-        <>{!ToDoItemFlag&&renderTodos()}</>
+        <>
+        <ul>{todos}</ul>
+        </>
     );
-
+};
+return <>{renderTodos()}</>;
 
 }

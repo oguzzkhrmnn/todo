@@ -7,15 +7,17 @@ import { useState } from 'react';
 
 
 function App() {
-  const [ToDoItemFlag,setToDoItemFlag]=useState(false);
   const [ToDoItem,setToDoItem]=useState("");
+  const [ToDoItems,setToDoItems]=useState([]);
   const OnToDoSubmit= (event) => {
     setToDoItem(event.target.value);
 
   };
   
   const OnToDoSend= () => {
-    setToDoItemFlag(true);
+    const newTodos=[...ToDoItems];
+    newTodos.push(ToDoItem);
+    setToDoItems(newTodos);
 
   };
  return (
@@ -39,7 +41,7 @@ function App() {
   </Row>
   </Row>
   <Row>
-    <Todos ToDoItemFlag={ToDoItemFlag} ToDoItem={ToDoItem}/>
+    <Todos ToDoItem={ToDoItem} ToDoItems={ToDoItems}/>
   </Row>  
     </Container>
   );
