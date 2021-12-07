@@ -22,10 +22,20 @@ export default function Todos({ ToDoItems }) {
     let filters = "asd";
     useEffect(() => {
         //bileşen yüklediten hemen sonra çalışılacak kısım
-        localStorage.setItem("oguz", filters)
-        fetch(`${url}football_competitions?${year}`)
+       
+      let veri;
+        fetch(`${url}football_competitions?${year}`)//veriyi çekiyor
             .then((response) => response.json())
-            .then((cevap) => console.log(cevap))
+            .then((cevap) =>{
+                veri=cevap.data;
+                
+                localStorage.setItem("localVeri",JSON.stringify (veri));
+                
+                console.log(JSON.parse(localStorage.getItem("localVeri")));
+
+            });
+           // console.log(cevap);
+           
         return () => {
             // Bileşenden sonra hemen sonra çalışıcak
             localStorage.clear();
