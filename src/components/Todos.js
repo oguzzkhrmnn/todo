@@ -9,7 +9,7 @@ export default function Todos({ToDoItems}){
             return <li>key={item}{index}</li>;
 
         });
-        const person = {
+       /* const person = {
             firstName: "John",
             lastName: "Doe",
             age: 50,
@@ -17,8 +17,13 @@ export default function Todos({ToDoItems}){
           };
         localStorage.setItem("oguz",JSON.stringify(person));
         const oguz=JSON.parse(localStorage.getItem("oguz"));//obje olarak yazdırıyor
-        console.log(oguz);
-    return(
+        console.log(oguz);*/
+          
+        fetch("https://jsonmock.hackerrank.com/api/football_competitions?year=2011")
+        .then((response) => response.json())
+        .then((cevap) => console.log(cevap))
+        return(
+
         <>
         <ul>{todos}</ul>
         </>
