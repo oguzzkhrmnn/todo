@@ -5,13 +5,18 @@ export default function Todos({ToDoItems}){
     const renderTodos =() =>{
 
         const todos= ToDoItems.map((item,index) => {
-            console.logt(ToDoItems[ToDoItems.length-1]);
+            console.log(ToDoItems[ToDoItems.length-1]);
             return <li>key={item}{index}</li>;
 
         });
-        let arrayy=["oguz","kahraman"];
-        localStorage.setItem("oguz",arrayy);
-        const oguz=localStorage.getItem("oguz");
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 50,
+            eyeColor: "blue"
+          };
+        localStorage.setItem("oguz",JSON.stringify(person));
+        const oguz=JSON.parse(localStorage.getItem("oguz"));//obje olarak yazdırıyor
         console.log(oguz);
     return(
         <>
